@@ -1,4 +1,4 @@
-# ReloOlogy
+# Cratebind Base Project
 
 ## Prerequesites
 
@@ -65,7 +65,11 @@ Through gitlab CI, we check the following aspects after every branch is pushed
 ## Continous Integration Tasks 
 
 `rake ci:build:commit` # Runs all tests
+
 `rake ci:build:rubocop` # Runs RuboCop code format verification
+
 `rake ci:build:rubycritic` # Runs RubyCritic code complexity verification
+
 `rake ci:build:simplecov` # Runs rspec with code coverage analysis and profile
+
 `rake ci:build:documentation` # Runs documentation generate and verifies its coverage
