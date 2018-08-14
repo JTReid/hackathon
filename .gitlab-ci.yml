@@ -1,0 +1,39 @@
+services:
+  - redis:latest
+  - postgres:latest
+variables:
+  POSTGRES_DB: app_test
+  POSTGRES_USER: postgres
+  POSTGRES_PASSWORD: postgres
+
+test:
+  script:
+    - apt-get update -qy
+    - apt-get install -y nodejs
+    - bundle install --path /cache
+    - cp config/database.example.yml config/database.yml
+    - cp config/secrets.example.yml config/secrets.yml
+    - cp config/local_env.example.yml config/local_env.yml
+    - bundle exec rake db:drop db:create db:schema:load RAILS_ENV=test
+    - bundle exec rake ci:build:commit
+  tags:
+    - tester-233
+
+# TODO uncomment when deploy needed
+
+# staging:
+#   type: deploy
+#   script:
+#   - gem install rake
+#   - gem install capistrano
+#   - gem install capistrano-rvm
+#   - gem install capistrano-rails
+#   - gem install capistrano-rake
+#   - gem install capistrano-bundler
+#   - gem install capistrano3-puma
+#   - gem install whenever
+#   - cap staging deploy
+#   tags:
+#   - deployer
+#   only:
+#   - master

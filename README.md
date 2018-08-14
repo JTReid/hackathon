@@ -16,8 +16,8 @@ via homebrew.
 * `bundle install` to get all required gems
 * `bundle exec rake db:create` to create the database
 * `bundle exec rake db:setup` to create the database schema and seed data
+* `bundle exec hookup` To make your database schema sync after each git checkout
 * Set up your .env file. You should get the development values from a colleague
-* Have yourself added to the social network applications
 
 ## Running
 
