@@ -17,7 +17,7 @@ via homebrew.
 * `bundle exec rake db:create` to create the database
 * `bundle exec rake db:setup` to create the database schema and seed data
 * `bundle exec hookup` To make your database schema sync after each git checkout
-* Set up your .env file. You should get the development values from a colleague
+* Set up your local_env.yml file copied from local_env.example.yml. You should get the development values from a colleague
 
 ## Running
 
