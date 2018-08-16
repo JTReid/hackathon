@@ -53,7 +53,7 @@ Where:
 [Postgres.app]: http://postgresapp.com/
 [Sidekiq]: http://sidekiq.org/
 
-## Continous Integration 
+## Continous Integration
 
 Through gitlab CI, we check the following aspects after every branch is pushed
 
@@ -62,7 +62,7 @@ Through gitlab CI, we check the following aspects after every branch is pushed
 * `yardoc` We verify that we meet at least 90% documentation coverage
 * `simplecov` We run the tests and check that testing coverage is at least 95%
 
-## Continous Integration Tasks 
+## Continous Integration Tasks
 
 `rake ci:build:commit` # Runs all tests
 
@@ -73,3 +73,11 @@ Through gitlab CI, we check the following aspects after every branch is pushed
 `rake ci:build:simplecov` # Runs rspec with code coverage analysis and profile
 
 `rake ci:build:documentation` # Runs documentation generate and verifies its coverage
+
+## Hot Module Replacement
+For rapid development with React, this setup includes [https://webpack.js.org/concepts/hot-module-replacement/](Hot Module Replacement), which will update React components without reloading the page.
+
+To use HMR, run:
+```
+$ npm run dev
+```

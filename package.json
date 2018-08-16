@@ -1,16 +1,32 @@
 {
   "name": "reloology",
   "private": true,
+  "scripts": {
+    "dev": "concurrently --kill-others \"bundle exec rails s\" \"bin/webpack-dev-server \" --names 'Rails 💻,Webpack 📦' --prefix name"
+  },
   "dependencies": {
     "@rails/webpacker": "3.5",
+    "babel-eslint": "^8.2.6",
     "babel-preset-react": "^6.24.1",
+    "concurrently": "^3.6.1",
     "prop-types": "^15.6.2",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
+    "react-hot-loader": "^4.3.4",
     "react_ujs": "^2.4.4",
     "yarn": "^1.9.4"
   },
   "devDependencies": {
+    "eslint": "^5.3.0",
+    "eslint-config-airbnb": "^17.0.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-config-react-app": "^2.1.0",
+    "eslint-loader": "1.9.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-prettier": "^2.6.2",
+    "eslint-plugin-react": "^7.10.0",
+    "prettier": "^1.14.0",
     "webpack-dev-server": "2.11.2"
   }
 }
