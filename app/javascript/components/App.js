@@ -9,7 +9,7 @@ class App extends React.Component {
   render() {
     const { greeting } = this.props;
     return (
-      <div>
+      <div data-testid="app">
         <h4>Welcome {greeting}</h4>
       </div>
     );

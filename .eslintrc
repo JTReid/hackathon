@@ -47,6 +47,7 @@
     "react/react-in-jsx-scope": 0,
     "react/forbid-prop-types": 0,
     "react/no-unescaped-entities": 0,
+    "no-warning-comments": "error",
     "react/jsx-filename-extension": [
       1,
       {
