@@ -10,7 +10,7 @@ class App extends React.Component {
     const { greeting } = this.props;
     return (
       <div data-testid="app">
-        <h4>Welcome {greeting}</h4>
+        <h4>Welcome {greeting}!</h4>
       </div>
     );
   }

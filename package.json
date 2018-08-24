@@ -2,7 +2,8 @@
   "name": "reloology",
   "private": true,
   "scripts": {
-    "dev": "concurrently --kill-others \"bundle exec rails s\" \"bin/webpack-dev-server \" --names 'Rails 💻,Webpack 📦' --prefix name",
+
+    "dev": "concurrently --kill-others \"bundle exec rails s\" \"bin/webpack-dev-server --quiet\" --names 'Rails, Webpack' --prefix name",
     "test": "NODE_ENV=test jest",
     "test:watch": "NODE_ENV=test jest --watch"
   },
