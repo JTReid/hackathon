@@ -9,6 +9,14 @@
 
 // console.log('Hello World from Webpacker');
 // Support component names relative to this directory:
+
+/**
+ * Do NOT edit code directly in this file unless you have a specific reason to do so
+ *
+ * Javascript that is intended to run on all pages should be set in /src/index.js
+ * and modules within the 'src' directory
+ *
+ */
 import '../src/index';
 
 const componentRequireContext = require.context('components', true);
