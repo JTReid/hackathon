@@ -51,6 +51,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 # For CI Testing
 gem 'rubocop', require: false
 gem 'rubycritic', require: false
+gem 'brakeman', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -77,6 +78,9 @@ group :development, :test do
 
   gem 'yard'
   gem 'fivemat'
+  gem 'capybara'
+  gem 'formulaic'
+  gem 'database_cleaner'
 
   gem 'simplecov', require: false
   gem 'simplecov-rcov', require: false

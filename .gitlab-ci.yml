@@ -7,14 +7,20 @@ variables:
   POSTGRES_PASSWORD: postgres
 
 test:
+  variables:
+    RAILS_ENV: test
   script:
-    - apt-get update -qy
+    - curl -sL https://deb.nodesource.com/setup_8.x | bash -
     - apt-get install -y nodejs
+    - npm install -g yarn
+    - yarn install
     - bundle install --path /cache
     - cp config/database.example.yml config/database.yml
     - cp config/secrets.example.yml config/secrets.yml
     - cp config/local_env.example.yml config/local_env.yml
-    - bundle exec rake db:drop db:create db:schema:load RAILS_ENV=test
+    - bundle exec rake db:drop db:create db:schema:load
+    - bundle exec rails webpacker:binstubs
+    - bundle exec rake assets:precompile
     - bundle exec rake ci:build:commit
   tags:
     - tester-233

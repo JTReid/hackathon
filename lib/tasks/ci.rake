@@ -70,8 +70,27 @@ unless Rails.env.production? || Rails.env.staging?
         fail if coverage < 90
       end
 
+      desc 'Run Brakeman'
+      task :brakeman, :output_files do |t, args|
+        require 'brakeman'
+
+        files = args[:output_files].split(' ') if args[:output_files]
+        report = Brakeman.run app_path: ".", output_files: files, print_report: true
+
+        if report.checks.warnings.any?
+          fail "Found #{report.checks.warnings.length} warnings, should be zero."
+        end
+
+        if report.checks.warnings.length != 0 || report.checks.all_warnings.length != 0
+          puts "Found #{report.checks.all_warnings.length} view warnings, should be 0."
+          puts "Found #{report.checks.warnings.length} security warnings, should be 0."
+          puts "Found #{report.errors.length} parse errors (these can be ignored)."
+          fail "!!! Brakeman found warnings that need to be fixed !!!"
+        end
+      end
+
       desc 'Run all tests'
-      task commit: ['ci:build:clean', 'ci:build:simplecov', 'ci:build:rubocop', 'ci:build:rubycritic', 'ci:build:documentation_coverage']
+      task commit: ['ci:build:clean', 'ci:build:simplecov', 'ci:build:rubocop', 'ci:build:rubycritic', 'ci:build:brakeman', 'ci:build:documentation_coverage']
     end
   end
 end
