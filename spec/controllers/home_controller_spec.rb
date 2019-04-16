@@ -3,6 +3,8 @@
 require 'rails_helper'
 
 describe HomeController, type: :controller do
+  render_views
+
   describe 'GET #index' do
     it 'returns http success' do
       get :index

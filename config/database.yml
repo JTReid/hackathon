@@ -7,14 +7,14 @@ default: &default
 
 development:
   <<: *default
-  database: reloology_development
+  database: mint_development
 
 test:
   <<: *default
-  database: reloology_test
+  database: mint_test
 
 production:
   <<: *default
-  database: reloology_production
-  username: reloology
+  database: mint_production
+  username: mint
   password: <%= ENV['RELOOLOGY_DATABASE_PASSWORD'] %>
