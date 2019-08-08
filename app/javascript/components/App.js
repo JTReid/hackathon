@@ -1,23 +1,31 @@
-import React from 'react';
+import { hot } from 'react-hot-loader/root';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { hot } from 'react-hot-loader';
 
 /**
  * Root component of app
  */
-class App extends React.Component {
-  render() {
-    const { greeting } = this.props;
-    return (
-      <div data-testid="app">
-        <h4>Welcome {greeting}!</h4>
-      </div>
-    );
-  }
-}
+const App = ({ name }) => {
+  const [greeting, setGreeting] = useState('Welcome');
 
-App.propTypes = {
-  greeting: PropTypes.string.isRequired,
+  return (
+    <div data-testid="app">
+      <h4>
+        {greeting}, {name}!
+      </h4>
+      <button
+        data-testid="change-message-button"
+        type="button"
+        onClick={() => setGreeting('Goodbye')}
+      >
+        Change Message
+      </button>
+    </div>
+  );
 };
 
-export default hot(module)(App);
+App.propTypes = {
+  name: PropTypes.string.isRequired,
+};
+
+export default hot(App);

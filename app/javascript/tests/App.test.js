@@ -1,18 +1,31 @@
 import React from 'react';
-import { render, cleanup } from 'react-testing-library';
-import 'jest-dom/extend-expect';
+import { render, fireEvent } from '@testing-library/react';
 import App from '../components/App';
 
-afterEach(cleanup);
+const sampleName = 'World';
 
-test('Should have text content', () => {
+const setup = () => {
+  const { getByTestId, container } = render(<App name={sampleName} />);
+
+  return {
+    container,
+    button: getByTestId('change-message-button'),
+  };
+};
+
+test('Should display name prop', () => {
   // FIXME: implement real tests
-  const greeting = 'Test Greeting';
-  const { getByText, getByTestId, container, debug } = render(<App greeting={greeting} />);
-  /**
-   * Use debug() to log out the current state of the dom
-   */
-  const childTagNames = Array.from(getByTestId('app').children).map(element => element.tagName);
-  expect(container).toHaveTextContent(greeting);
-  expect(childTagNames.includes('H4')).toEqual(true);
+  const { container } = setup();
+
+  expect(container).toHaveTextContent(sampleName);
+});
+
+test('Should change message on button click', () => {
+  const { container, button } = setup();
+
+  expect(container).toHaveTextContent('Welcome');
+
+  fireEvent.click(button);
+
+  expect(container).toHaveTextContent('Goodbye');
 });

@@ -16,7 +16,7 @@
  * and modules within the 'src' directory
  *
  */
-import '../src/index';
+import '../src';
 
 const componentRequireContext = require.context('components', true);
 const ReactRailsUJS = require('react_ujs');
