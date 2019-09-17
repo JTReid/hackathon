@@ -2,7 +2,7 @@
   "name": "base-project",
   "private": true,
   "scripts": {
-    "dev": "concurrently --kill-others \"bundle exec rails s\" \"bin/webpack-dev-server --hot --quiet\" --names 'Rails, Webpack' --prefix name",
+    "dev": "concurrently --kill-others \"bundle exec rails s\" \"bin/webpack-dev-server --hot --quiet\" --names 'Rails,Webpack' --prefix name",
     "test": "NODE_ENV=test jest",
     "test:watch": "NODE_ENV=test jest --watch",
     "lint": "yarn eslint --ext .js . --config '.eslintrc' --fix"
@@ -16,7 +16,7 @@
     "concurrently": "^3.6.1",
     "eslint-config-cratebind": "^2.0.8",
     "prop-types": "^15.7.2",
-    "react": "^16.8.6",
+    "react": "^16.9.0",
     "react-dom": "npm:@hot-loader/react-dom",
     "react-hot-loader": "^4.12.10",
     "react_ujs": "^2.5.0"
