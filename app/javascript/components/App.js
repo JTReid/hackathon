@@ -1,4 +1,3 @@
-import { hot } from 'react-hot-loader/root';
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
@@ -7,9 +6,11 @@ import PropTypes from 'prop-types';
  */
 const App = ({ name }) => {
   const [greeting, setGreeting] = useState('Welcome');
+  const [value, setValue] = useState('');
 
   return (
     <div data-testid="app">
+      <input value={value} onChange={e => setValue(e.target.value)} />
       <h4>
         {greeting}, {name}!
       </h4>
@@ -28,4 +29,4 @@ App.propTypes = {
   name: PropTypes.string.isRequired,
 };
 
-export default hot(App);
+export default App;

@@ -8,7 +8,7 @@
     "lint": "yarn eslint --ext .js . --config '.eslintrc' --fix"
   },
   "dependencies": {
-    "@babel/preset-react": "^7.0.0",
+    "@babel/preset-react": "^7.9.4",
     "@rails/webpacker": "^4.0.7",
     "@testing-library/jest-dom": "^4.0.0",
     "@testing-library/react": "^8.0.8",
@@ -16,18 +16,19 @@
     "concurrently": "^3.6.1",
     "eslint-config-cratebind": "^2.0.8",
     "prop-types": "^15.7.2",
-    "react": "^16.9.0",
-    "react-dom": "npm:@hot-loader/react-dom",
-    "react-hot-loader": "^4.12.10",
-    "react_ujs": "^2.5.0"
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react_ujs": "^2.6.1"
   },
   "devDependencies": {
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.3.1",
     "babel-jest": "^24.8.0",
     "error-overlay-webpack-plugin": "^0.4.1",
     "eslint": "^6.1.0",
     "husky": "^3.0.3",
     "jest": "^24.8.0",
     "lint-staged": "^9.2.1",
+    "react-refresh": "^0.8.2",
     "react-test-renderer": "^16.8.6",
     "webpack-dev-server": "^3.7.2"
   },

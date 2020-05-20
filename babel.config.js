@@ -5,6 +5,8 @@ module.exports = function(api) {
   const isProductionEnv = api.env('production');
   const isTestEnv = api.env('test');
 
+  api.cache.using(() => process.env.NODE_ENV);
+
   if (!validEnv.includes(currentEnv)) {
     throw new Error(
       `${'Please specify a valid `NODE_ENV` or ' +
@@ -79,7 +81,6 @@ module.exports = function(api) {
           removeImport: true,
         },
       ],
-      ['react-hot-loader/babel'],
     ].filter(Boolean),
   };
 };
