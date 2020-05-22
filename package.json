@@ -23,7 +23,6 @@
   "devDependencies": {
     "@pmmmwh/react-refresh-webpack-plugin": "^0.3.1",
     "babel-jest": "^24.8.0",
-    "error-overlay-webpack-plugin": "^0.4.1",
     "eslint": "^6.1.0",
     "husky": "^3.0.3",
     "jest": "^24.8.0",
