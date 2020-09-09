@@ -3,8 +3,8 @@
   "private": true,
   "scripts": {
     "dev": "concurrently --kill-others \"bundle exec rails s\" \"bin/webpack-dev-server --hot --quiet\" --names 'Rails,Webpack' --prefix name",
-    "test": "NODE_ENV=test jest",
-    "test:watch": "NODE_ENV=test jest --watch",
+    "test": "NODE_ENV=test jest --coverage",
+    "test:watch": "NODE_ENV=test jest --watch --coverage",
     "lint": "yarn eslint --ext .js . --config '.eslintrc' --fix"
   },
   "dependencies": {
