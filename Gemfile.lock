@@ -241,6 +241,10 @@ GEM
       grape (>= 0.17)
     grape-swagger (1.3.0)
       grape (~> 1.3)
+    graphiql-rails (1.7.0)
+      railties
+      sprockets-rails
+    graphql (1.11.4)
     haml (5.1.2)
       temple (>= 0.8.0)
       tilt
@@ -563,6 +567,8 @@ DEPENDENCIES
   grape-middleware-logger
   grape-swagger
   grape-swagger-rails!
+  graphiql-rails
+  graphql
   haml-rails (~> 1.0)
   has_secure_token
   hashie-forbidden_attributes

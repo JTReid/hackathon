@@ -26,6 +26,7 @@ gem 'ransack'
 gem 'has_secure_token' # For generating user unique tokens
 gem 'kaminari'
 gem 'cancancan', '~> 1.10'
+gem 'graphql'
 
 # Background Processing
 gem 'sidekiq'
@@ -106,3 +107,5 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem 'graphiql-rails', group: :development
