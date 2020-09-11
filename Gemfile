@@ -1,9 +1,9 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.5.3'
+ruby '2.6.6'
 
-gem 'rails', '~> 5.2.0'
+gem 'rails', '~> 6.0'
 
 # API/Server
 gem 'puma', '~> 3.11'
@@ -37,11 +37,11 @@ gem 'devise'
 gem 'devise-async' # For sending devise emails on background
 
 # Assets
-gem 'sass-rails', '~> 5.0'
+gem 'sass-rails'
 gem 'uglifier', '>= 1.3.0'
 gem 'webpacker'
 gem 'haml-rails', '~> 1.0'
-gem 'turbolinks', '~> 5'
+gem 'turbolinks'
 gem 'react-rails'
 gem 'formtastic-bootstrap'
 
