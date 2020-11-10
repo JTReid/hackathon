@@ -14,9 +14,9 @@ via homebrew.
 ## Setting up
 
 * `bundle install` to get all required gems
-* `bundle exec rake db:create` to create the database
-* `bundle exec rake db:setup` to create the database schema and seed data
-* `bundle exec hookup` To make your database schema sync after each git checkout
+* `bundle exec rake db:setup` to create the database, schema, and seed data
+* `bundle exec hookup` to make your database schema sync after each git checkout
+* `yarn install` to install front-end dependencies
 * Set up your local_env.yml file copied from local_env.example.yml. You should get the development values from a colleague
 
 ## Running
@@ -43,6 +43,7 @@ Branches should be named according to the following structure:
 `[task-type]/[task-id]/[task-title]`
 
 Where:
+
 * `task-type` can be `feature`, `bugfix` or `enhancement`
 * `task-id` corresponds to the id of the card on Jira
 * `task-title` describes what the task concerns.
@@ -75,9 +76,11 @@ Through gitlab CI, we check the following aspects after every branch is pushed
 `rake ci:build:documentation` # Runs documentation generate and verifies its coverage
 
 ## Hot Module Replacement
+
 For rapid development with React, this setup includes [https://webpack.js.org/concepts/hot-module-replacement/](Hot Module Replacement), which will update React components without reloading the page.
 
 To use HMR, run:
+
 ```
-$ npm run dev
+npm run dev
 ```
