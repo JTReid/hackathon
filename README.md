@@ -1,6 +1,6 @@
 # Cratebind Base Project
 
-## Prerequesites
+## Prerequisites
 
 To run the server in development mode, you'll need:
 
@@ -10,6 +10,11 @@ is advisable
 simplest way to get it running.
 * [Redis] is also used to schedule background jobs. On OS X, you can install it
 via homebrew.
+
+#### Node Version
+* Make sure you have [Nodenv](https://github.com/nodenv/nodenv) installed (we highly suggest **not** using NVM)
+* Run `nodenv install` to install this project's node version
+* Close and re-open your terminal and run `node -v`. Make sure it matches the version in the `.node-version` file
 
 ## Setting up
 
