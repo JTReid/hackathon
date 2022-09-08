@@ -6,7 +6,7 @@ ruby '2.6.6'
 gem 'rails', '~> 6.0'
 
 # API/Server
-gem 'puma', '~> 3.11'
+gem 'puma'
 gem 'grape'
 gem 'grape-swagger'
 gem 'grape-middleware-logger'
@@ -16,7 +16,7 @@ gem 'active_model_serializers', '~> 0.9.3'
 gem 'hashie-forbidden_attributes'
 
 # ActiveAdmin
-gem 'activeadmin' # Use it Depending of the situation
+# gem 'activeadmin' # Use it Depending of the situation
 
 # DB
 gem 'pg', '>= 0.18', '< 2.0'
@@ -53,6 +53,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'rubocop', require: false
 gem 'rubycritic', require: false
 gem 'brakeman', require: false
+
+gem 'http'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
