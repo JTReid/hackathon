@@ -5,13 +5,12 @@ class MessagesController < ApplicationController
     @response = situations[params['situations'].to_sym]
   end
 
-
   def situations
     {
       scheduling_a_meeting: scheduling[params['person'].to_sym].sample,
-      giving_status_update: giving_status_update[params['person'].to_sym].sample
-      receiving_status_update: receiving_status_update[params['person'].to_sym].sample
-      running_late: running_late[params['person'].to_sym].sample
+      giving_status_update: giving_status_update[params['person'].to_sym].sample,
+      receiving_status_update: receiving_status_update[params['person'].to_sym].sample,
+      running_late: running_late[params['person'].to_sym].sample,
       did_you_see_my_message: get_my_message[params['person'].to_sym].sample
     }
   end
