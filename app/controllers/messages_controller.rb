@@ -3,6 +3,10 @@ class MessagesController < ApplicationController
 
   def generate
     @response = situations[params['situations'].to_sym]
+
+    render json: {
+      text: @response
+    }.to_json
   end
 
   def situations
@@ -39,7 +43,7 @@ class MessagesController < ApplicationController
         "Hey <name> - I wanted to share a brief status update. The project is coming along and the team is giving 110%. We've started to gain traction and take care of some low-hanging fruit. I'll keep you in the loop moving forward but things are looking decent so far. ",
       ],
       coworker: [
-        "Hey <name> - it looks like the project is <behind, on time, ahead> of schedule. I'm certain there are still lots of moving parts at this point and I just want to level set expectations. ",
+        "Hey <name> - it looks like the project is behind of schedule. I'm certain there are still lots of moving parts at this point and I just want to level set expectations. ",
       ],
       employee: [
         "<name>, wanted to let you know our team has been giving it 110% to get our ducks in a row. With laser focus, this killer app will move the goalposts for our competitors as we leapfrog over them.",
