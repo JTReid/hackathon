@@ -1,5 +1,5 @@
 class MessagesController < ApplicationController
-  # before_action :set_data
+  protect_from_forgery with: :null_session
 
   def generate
     @response = situations[params['situations'].to_sym]
