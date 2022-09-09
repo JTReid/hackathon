@@ -41,16 +41,17 @@ gem 'devise-async' # For sending devise emails on background
 gem 'sass-rails'
 gem 'uglifier', '>= 1.3.0'
 gem 'webpacker'
-gem 'haml-rails', '~> 1.0'
+gem 'haml-rails'
 gem 'turbolinks'
 gem 'react-rails'
 gem 'formtastic-bootstrap'
+
+gem 'http'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
 # For CI Testing
-gem 'rubocop', require: false
 gem 'rubycritic', require: false
 gem 'brakeman', require: false
 
